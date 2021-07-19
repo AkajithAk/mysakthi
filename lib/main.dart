@@ -1,10 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:mysakthi/size.dart'; 
+import 'package:flutter/material.dart'; 
 import 'package:mysakthi/view/screen/onboardingpage2.dart';
 import 'package:mysakthi/view/screen/onboardingpage3.dart';
 import 'package:mysakthi/view/screen/otp.dart';
-import 'package:mysakthi/view/screen/splashscreen2.dart';
-import 'package:mysakthi/view/screen/transactionspage.dart';
+import 'package:mysakthi/view/screen/splashscreen2.dart'; 
 
 import 'view/screen/login.dart';
 import 'view/screen/onboardingpage1.dart';
@@ -45,7 +43,10 @@ class MyApp extends StatelessWidget {
                   fontFamily: "Montserrat",
                   fontSize: 18,
                   fontWeight: FontWeight.w700,
-                  color: Colors.white))
+                  color: Colors.white),
+                  headline4: TextStyle(color: Colors.black,fontSize: 18,),
+                  headline5:TextStyle(color: Colors.black,fontSize: 16,
+                  fontWeight: FontWeight.bold), )
 
           // primarySwatch: Colors.blue,
           ),
