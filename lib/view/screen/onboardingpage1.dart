@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mysakthi/size.dart';
+import 'package:mysakthi/view/screen/onboardingpage2.dart';
+import 'package:mysakthi/view/screen/splashscreen.dart';
 
 class Onboardingpage1 extends StatelessWidget {
+  static const routename = "/onboarding";
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -37,7 +40,6 @@ class Onboardingpage1 extends StatelessWidget {
                     // height: 600,
                   ),
                 ),
-                
                 Center(
                     child: Text(
                   "Organize Your Money",
@@ -50,8 +52,8 @@ class Onboardingpage1 extends StatelessWidget {
                   padding: const EdgeInsets.all(10.0),
                   child: Center(
                     child: Container(
-                      height: SizeConfig.blockSizeVertical!*10,
-                      width: SizeConfig.blockSizeVertical!*30,
+                      height: SizeConfig.blockSizeVertical! * 10,
+                      width: SizeConfig.blockSizeVertical! * 30,
                       child: Text(
                         "Welcome! AiF helps you to have better understanding of your finances,  present and future.",
                         style: Theme.of(context).textTheme.bodyText1,
@@ -65,18 +67,28 @@ class Onboardingpage1 extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text("skip", style: Theme.of(context).textTheme.button),
-                      Container(
-                          width: SizeConfig.width! * 30,
-                          height: SizeConfig.height! * 7,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.black),
-                          child: Center(
-                              child: Text(
-                            "Next",
-                            style: Theme.of(context).textTheme.bodyText2,
-                          )))
+                      InkWell(onTap: () {
+                            Navigator.of(context)
+                                .pushNamed(Splashscreen.routename);
+                          },
+                        child: Text("skip", style: Theme.of(context).textTheme.button)),
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context)
+                              .pushNamed(Onboardingpage2.routename);
+                        },
+                        child: Container(
+                            width: SizeConfig.width! * 30,
+                            height: SizeConfig.height! * 7,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.black),
+                            child: Center(
+                                child: Text(
+                              "Next",
+                              style: Theme.of(context).textTheme.bodyText2,
+                            ))),
+                      )
                     ],
                   ),
                 )

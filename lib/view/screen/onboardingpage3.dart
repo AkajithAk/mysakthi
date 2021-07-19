@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mysakthi/size.dart';
+import 'package:mysakthi/view/screen/splashscreen.dart';
 
 class Onboardingpage3 extends StatelessWidget {
+  static const routename = "/onboarding3";
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -53,21 +55,27 @@ class Onboardingpage3 extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(20),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text("skip", style: Theme.of(context).textTheme.button),
-                      Container(
-                          width: SizeConfig.width! * 30,
-                          height: SizeConfig.height! * 7,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.black),
-                          child: Center(
-                              child: Text(
-                            "Next",
-                            style: Theme.of(context).textTheme.bodyText2,
-                          )))
+                     
+                      InkWell(
+                        onTap: () {
+                            Navigator.of(context)
+                                .pushNamed(Splashscreen.routename);
+                          },
+                        child: Container(
+                            width: SizeConfig.width! * 30,
+                            height: SizeConfig.height! * 7,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.black),
+                            child: Center(
+                                child: Text(
+                              "Next",
+                              style: Theme.of(context).textTheme.bodyText2,
+                            ))),
+                      )
                     ],
                   ),
                 )

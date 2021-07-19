@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mysakthi/size.dart';
+import 'package:mysakthi/view/screen/onboardingpage3.dart';
+import 'package:mysakthi/view/screen/splashscreen.dart';
 
 class Onboardingpage2 extends StatelessWidget {
+  static const routename = "/onboarding2";
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -27,9 +30,10 @@ class Onboardingpage2 extends StatelessWidget {
                     // height: SizeConfig.width! * 50,
                   ),
                 ),
-                Container(height: SizeConfig.height!*50,
-                //width: SizeConfig.width!*100,
-                  child: Image.asset("assets/images/card2.png")),
+                Container(
+                    height: SizeConfig.height! * 50,
+                    //width: SizeConfig.width!*100,
+                    child: Image.asset("assets/images/card2.png")),
                 Center(
                     child: Text(
                   "Connect Your Bank",
@@ -42,8 +46,8 @@ class Onboardingpage2 extends StatelessWidget {
                   padding: const EdgeInsets.all(10.0),
                   child: Center(
                     child: Container(
-                      height: SizeConfig.blockSizeVertical!*10,
-                      width: SizeConfig.blockSizeVertical!*30,
+                      height: SizeConfig.blockSizeVertical! * 10,
+                      width: SizeConfig.blockSizeVertical! * 30,
                       child: Text(
                         "AiF works best with access to your bank accounts. ",
                         style: Theme.of(context).textTheme.bodyText1,
@@ -57,18 +61,30 @@ class Onboardingpage2 extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text("skip", style: Theme.of(context).textTheme.button),
-                      Container(
-                          width: SizeConfig.width! * 30,
-                          height: SizeConfig.height! * 7,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.black),
-                          child: Center(
-                              child: Text(
-                            "Next",
-                            style: Theme.of(context).textTheme.bodyText2,
-                          )))
+                      InkWell(
+                          onTap: () {
+                            Navigator.of(context)
+                                .pushNamed(Splashscreen.routename);
+                          },
+                          child: Text("skip",
+                              style: Theme.of(context).textTheme.button)),
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context)
+                              .pushNamed(Onboardingpage3.routename);
+                        },
+                        child: Container(
+                            width: SizeConfig.width! * 30,
+                            height: SizeConfig.height! * 7,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.black),
+                            child: Center(
+                                child: Text(
+                              "Next",
+                              style: Theme.of(context).textTheme.bodyText2,
+                            ))),
+                      )
                     ],
                   ),
                 )
