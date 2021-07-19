@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mysakthi/view/screen/homebalance1.dart';
 
 import '../../size.dart';
 
@@ -94,21 +95,27 @@ class Loginpage extends StatelessWidget {
                               )),
                         )),
                       ),
-                      Container(
-                        height: SizeConfig.height! * 10,
-                        width: SizeConfig.width! * 10,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(color: Colors.black),
-                              BoxShadow(color: Colors.white)
-                            ]),
-                        child: Center(
-                            child: Text(
-                          "Login",
-                          style: Theme.of(context).textTheme.button,
-                        )),
+                      InkWell(
+                        onTap:(){
+                           Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (BuildContext context) => HomeBalance1()));
+                        } ,
+                        child: Container(
+                          height: SizeConfig.height! * 10,
+                          width: SizeConfig.width! * 10,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(color: Colors.black),
+                                BoxShadow(color: Colors.white)
+                              ]),
+                          child: Center(
+                              child: Text(
+                            "Login",
+                            style: Theme.of(context).textTheme.button,
+                          )),
+                        ),
                       ),
                       SizedBox(
                         height: SizeConfig.height! * 2,

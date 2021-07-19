@@ -1,26 +1,27 @@
-import 'package:flutter/material.dart';
-import 'package:mysakthi/view/screen/login.dart';
-import 'package:mysakthi/view/screen/onboardingpage1.dart';
+import 'package:flutter/material.dart'; 
 import 'package:mysakthi/view/screen/onboardingpage2.dart';
 import 'package:mysakthi/view/screen/onboardingpage3.dart';
 import 'package:mysakthi/view/screen/otp.dart';
-import 'package:mysakthi/view/screen/signup.dart';
-import 'package:mysakthi/view/screen/splashscreen.dart';
-import 'package:mysakthi/view/screen/splashscreen2.dart';
-import 'package:mysakthi/view/screen/transactionspage.dart';
+import 'package:mysakthi/view/screen/splashscreen2.dart'; 
+
+import 'view/screen/login.dart';
+import 'view/screen/onboardingpage1.dart';
+import 'view/screen/signup.dart';
+import 'view/screen/splashscreen.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+ 
   @override
   Widget build(BuildContext context) {
     PageController controller = PageController(initialPage: 0);
     return MaterialApp(
       title: 'MySakthi',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
+        theme: ThemeData(
           primaryColor: Colors.amberAccent,
           textTheme: ThemeData.light().textTheme.copyWith(
               headline1: TextStyle(
@@ -42,19 +43,22 @@ class MyApp extends StatelessWidget {
                   fontFamily: "Montserrat",
                   fontSize: 18,
                   fontWeight: FontWeight.w700,
-                  color: Colors.white))
+                  color: Colors.white),
+                  headline4: TextStyle(color: Colors.black,fontSize: 18,),
+                  headline5:TextStyle(color: Colors.black,fontSize: 16,
+                  fontWeight: FontWeight.bold), )
 
           // primarySwatch: Colors.blue,
           ),
-      home: Transactionpage()
-      // PageView(
-      //   controller: controller,
-      //   children: [
-      //     Onboardingpage1(), 
-      //     Onboardingpage2(), 
-      //     Onboardingpage3()
-      //     ],
-      // )
+      home:
+      PageView(
+        controller: controller,
+        children: [
+          Onboardingpage1(), 
+          Onboardingpage2(), 
+          Onboardingpage3()
+          ],
+      )
       ,routes: {
         Onboardingpage2.routename: (ctx) => Onboardingpage2(),
         Onboardingpage3.routename: (ctx) => Onboardingpage3(),
