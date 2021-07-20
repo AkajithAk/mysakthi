@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; 
 import 'package:mysakthi/size.dart';
 import 'package:mysakthi/view/screen/onboardingpage2.dart';
+import 'package:mysakthi/view/screen/otplogin.dart';
 import 'package:mysakthi/view/screen/splashscreen.dart';
 
 class Onboardingpage1 extends StatelessWidget {
@@ -68,15 +69,20 @@ class Onboardingpage1 extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       InkWell(onTap: () {
-                            Navigator.of(context)
-                                .pushNamed(Splashscreen.routename);
+                             Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => OtpLogin()),
+  ); 
                           },
                         child: Text("skip", style: Theme.of(context).textTheme.button)),
                       InkWell(
                         onTap: () {
-                          Navigator.of(context)
-                              .pushNamed(Onboardingpage2.routename);
+                            Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => Onboardingpage2()),
+  ); 
                         },
+                        
                         child: Container(
                             width: SizeConfig.width! * 30,
                             height: SizeConfig.height! * 7,

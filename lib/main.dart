@@ -1,6 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
-import 'package:mysakthi/otplogin.dart'; 
+import 'package:flutter/material.dart'; 
+import 'package:mysakthi/view/screen/homebalance1.dart'; 
 import 'package:mysakthi/view/screen/onboardingpage2.dart';
 import 'package:mysakthi/view/screen/onboardingpage3.dart';
 import 'package:mysakthi/view/screen/otp.dart';
@@ -24,37 +25,37 @@ class MyApp extends StatelessWidget {
     PageController controller = PageController(initialPage: 0);
     return MaterialApp(
       title: 'MySakthi',
-      // debugShowCheckedModeBanner: false,
-      //   theme: ThemeData(
-      //     primaryColor: Colors.amberAccent,
-      //     textTheme: ThemeData.light().textTheme.copyWith(
-      //         headline1: TextStyle(
-      //             fontFamily: "Montserrat",
-      //             fontSize: 20,
-      //             fontWeight: FontWeight.bold,
-      //             color: Colors.black),
-      //         bodyText1: TextStyle(
-      //             fontFamily: "Montserrat",
-      //             fontSize: 16,
-      //             //fontWeight: FontWeight.w700,
-      //             color: Colors.black),
-      //         button: TextStyle(
-      //             fontFamily: "Montserrat",
-      //             fontSize: 20,
-      //             fontWeight: FontWeight.bold,
-      //             color: Colors.blue),
-      //         bodyText2: TextStyle(
-      //             fontFamily: "Montserrat",
-      //             fontSize: 18,
-      //             fontWeight: FontWeight.w700,
-      //             color: Colors.white),
-      //             headline4: TextStyle(color: Colors.black,fontSize: 18,),
-      //             headline5:TextStyle(color: Colors.black,fontSize: 16,
-      //             fontWeight: FontWeight.bold), )
+      debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primaryColor: Colors.amberAccent,
+          textTheme: ThemeData.light().textTheme.copyWith(
+              headline1: TextStyle(
+                  fontFamily: "Montserrat",
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
+              bodyText1: TextStyle(
+                  fontFamily: "Montserrat",
+                  fontSize: 16,
+                  //fontWeight: FontWeight.w700,
+                  color: Colors.black),
+              button: TextStyle(
+                  fontFamily: "Montserrat",
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue),
+              bodyText2: TextStyle(
+                  fontFamily: "Montserrat",
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white),
+                  headline4: TextStyle(color: Colors.black,fontSize: 18,),
+                  headline5:TextStyle(color: Colors.black,fontSize: 16,
+                  fontWeight: FontWeight.bold), )
 
-      //     // primarySwatch: Colors.blue,
-      //     ),
-      // home:
+          // primarySwatch: Colors.blue,
+          ),
+      home:Checking(),
       // PageView(
       //   controller: controller,
       //   children: [
@@ -73,7 +74,39 @@ class MyApp extends StatelessWidget {
       //   OTPpage.routename: (ctx) => OTPpage()
       // },
 
-  home: OtpLogin(),
+  // home: Checking(),
     );
   }
 }
+
+class Checking extends StatefulWidget {
+  const Checking({ Key? key }) : super(key: key);
+
+  @override
+  _CheckingState createState() => _CheckingState();
+}
+
+class _CheckingState extends State<Checking> {
+
+  FirebaseAuth ?_auth;
+  User ?_user;
+  bool isLoading=true;
+ @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _auth=FirebaseAuth.instance;
+    _user=_auth!.currentUser;
+    isLoading=false;
+  }
+  @override
+  Widget build(BuildContext context) {
+    return isLoading? Scaffold(
+      body:Center(
+        child: CircularProgressIndicator(),
+      )
+    ):_user==null?Onboardingpage1():Splashscreen();
+  }
+}
+
+// Onboardingpage1

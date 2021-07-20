@@ -29,14 +29,14 @@ class _StatisticState extends State<Statistic> {
               children: [
                 Image.asset("assets/images/homefront.png"),
                 SizedBox(width: 4,),
-                Text("Earnings \nIncome",style: Theme.of(context).textTheme.headline4,),
+                Text("Earnings \nIncome",style: TextStyle(fontSize: 18,color: Colors.black)),
               ],
             ),
              Row(
               children: [
                 Image.asset("assets/images/homeback.png"),
                 SizedBox(width: 4,),
-                Text("No.of \nBranches",style: Theme.of(context).textTheme.headline4,),
+                Text("No.of \nBranches",style: TextStyle(fontSize: 18,color: Colors.black),),
               ],
             ),
           ],
