@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "565467786191",
+    "project_id": "mlm-mobile",
+    "storage_bucket": "mlm-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565467786191:android:1608e1c3d66e15204880ba",
+        "android_client_info": {
+          "package_name": "com.mysakthi.mysakthi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565467786191-ieaek8k8s9omcoisr4ge10kjn0kcmt2p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mysakthi.mysakthi",
+            "certificate_hash": "87b530dc37cbaf282c8642092bd2abc369379ee9"
+          }
+        },
+        {
+          "client_id": "565467786191-4bh9g4na7r43hr47nn7mo8shafmg3m7g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEQvgqEOGQ3wD9AKEHf5ToPHGWqV4cE4w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565467786191-4bh9g4na7r43hr47nn7mo8shafmg3m7g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
