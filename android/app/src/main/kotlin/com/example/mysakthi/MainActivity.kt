@@ -1,4 +1,4 @@
-package com.example.mysakthi
+package com.mysakthi.mysakthi
 
 import io.flutter.embedding.android.FlutterActivity
 

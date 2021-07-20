@@ -13,7 +13,7 @@ class _StatisticState extends State<Statistic> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Container(
-      height: SizeConfig.height!*30,
+      height: SizeConfig.height!*35,
       width: SizeConfig.width!*82,
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),color: Colors.white,),
       child: Column(children: [

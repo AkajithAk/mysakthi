@@ -39,7 +39,7 @@ class _WalleBalanceState extends State<WalleBalance> {
                  Container(
                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),color: Colors.white,),
                        
-                       height: SizeConfig.height!*20,
+                       height: SizeConfig.height!*25,
                       width: SizeConfig.width!*90,
           //  width: double.infinity,
            child: Column(
@@ -51,7 +51,7 @@ class _WalleBalanceState extends State<WalleBalance> {
                SizedBox(height: 2,),
                Text("10,765",style: TextStyle(fontSize: 16,color: Colors.blue)),
                SizedBox(height: 2,),
-               Text("USD",style: TextStyle(fontSize: 16)),
+               Text("USD",style: TextStyle(fontSize: 16,color: Colors.black)),
              ],
            ),
 
