@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mysakthi/size.dart';
+import 'package:mysakthi/view/screen/homebalance1.dart';
 import 'package:mysakthi/view/screen/splashscreen2.dart';
 
 class Splashscreen extends StatelessWidget {
@@ -40,20 +41,14 @@ class Splashscreen extends StatelessWidget {
                             fontSize: 25,
                             color: Colors.blue),
                       ),
-                      SizedBox(
-                        height: SizeConfig.height! * 2,
-                      ),
-                      Text(
-                        "subtitle here",
-                        style: Theme.of(context).textTheme.bodyText1,
-                      )
+                      
                     ],
                   ),
                 ),
               ),
             );
           } else {
-            return Splashscreen2();
+            return HomeBalance1();
           }
         },
       ),

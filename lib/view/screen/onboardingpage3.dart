@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; 
 import 'package:mysakthi/size.dart';
+import 'package:mysakthi/view/screen/otplogin.dart';
 import 'package:mysakthi/view/screen/splashscreen.dart';
 
 class Onboardingpage3 extends StatelessWidget {
@@ -61,8 +62,11 @@ class Onboardingpage3 extends StatelessWidget {
                      
                       InkWell(
                         onTap: () {
-                            Navigator.of(context)
-                                .pushNamed(Splashscreen.routename);
+                              Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => OtpLogin()),
+  ); 
+                                
                           },
                         child: Container(
                             width: SizeConfig.width! * 30,
@@ -72,7 +76,7 @@ class Onboardingpage3 extends StatelessWidget {
                                 color: Colors.black),
                             child: Center(
                                 child: Text(
-                              "Next",
+                              "Done",
                               style: Theme.of(context).textTheme.bodyText2,
                             ))),
                       )
