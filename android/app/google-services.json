@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "565467786191",
-    "project_id": "mlm-mobile",
-    "storage_bucket": "mlm-mobile.appspot.com"
+    "project_number": "766223713097",
+    "project_id": "mysakthi-e65a1",
+    "storage_bucket": "mysakthi-e65a1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:565467786191:android:1608e1c3d66e15204880ba",
+        "mobilesdk_app_id": "1:766223713097:android:0e64c905296b3a474e5098",
         "android_client_info": {
-          "package_name": "com.mysakthi.mysakthi"
+          "package_name": "com.mysakthi.mysakthiapps"
         }
       },
       "oauth_client": [
         {
-          "client_id": "565467786191-ieaek8k8s9omcoisr4ge10kjn0kcmt2p.apps.googleusercontent.com",
+          "client_id": "766223713097-t0ci7uuig3gh725otgcssicba9sf9hju.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.mysakthi.mysakthi",
+            "package_name": "com.mysakthi.mysakthiapps",
             "certificate_hash": "87b530dc37cbaf282c8642092bd2abc369379ee9"
           }
         },
         {
-          "client_id": "565467786191-4bh9g4na7r43hr47nn7mo8shafmg3m7g.apps.googleusercontent.com",
+          "client_id": "766223713097-j11onj94oji870h8df734orpn0n2dg48.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBEQvgqEOGQ3wD9AKEHf5ToPHGWqV4cE4w"
+          "current_key": "AIzaSyDV4wrJKiswBdTnhWZvSM_Wzp7qGeEiLHA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "565467786191-4bh9g4na7r43hr47nn7mo8shafmg3m7g.apps.googleusercontent.com",
+              "client_id": "766223713097-j11onj94oji870h8df734orpn0n2dg48.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
