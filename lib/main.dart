@@ -1,15 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart'; 
-import 'package:mysakthi/view/screen/homebalance1.dart'; 
-import 'package:mysakthi/view/screen/onboardingpage2.dart';
-import 'package:mysakthi/view/screen/onboardingpage3.dart';
-import 'package:mysakthi/view/screen/otp.dart';
-import 'package:mysakthi/view/screen/splashscreen2.dart'; 
+import 'package:flutter/material.dart';
+import 'package:mysakthi/view/screen/Referalscreen.dart';
+import 'package:mysakthi/view/screen/languages.dart';
+import 'package:mysakthi/view/screen/level.dart'; 
+import 'package:mysakthi/view/screen/plans.dart';
+import 'package:mysakthi/view/screen/selectcountry.dart';
 
-import 'view/screen/login.dart';
 import 'view/screen/onboardingpage1.dart';
-import 'view/screen/signup.dart';
 import 'view/screen/splashscreen.dart';
 
 void main() async{
@@ -46,16 +44,18 @@ class MyApp extends StatelessWidget {
                   color: Colors.blue),
               bodyText2: TextStyle(
                   fontFamily: "Montserrat",
-                  fontSize: 18,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white),
+                  fontSize: 15,
+                  //fontWeight: FontWeight.w700,
+                  wordSpacing: 8,
+                  letterSpacing: 1,
+                  color: Colors.black),
                   headline4: TextStyle(color: Colors.black,fontSize: 18,),
                   headline5:TextStyle(color: Colors.black,fontSize: 16,
                   fontWeight: FontWeight.bold), )
 
           // primarySwatch: Colors.blue,
           ),
-      home:Checking(),
+      home:ReferalPage(),
       // PageView(
       //   controller: controller,
       //   children: [
