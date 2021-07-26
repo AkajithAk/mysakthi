@@ -25,3 +25,15 @@ const List<Map<String,String>> country=[{
   
 ];
  
+const List<Map<String,String>> language=[{
+  "Eng":"English"},
+  {
+  "Por":"Português"},
+  {
+  "jpn":"日本語"},
+  {
+  "CHN":"中国"},
+  
+  
+];
+ 

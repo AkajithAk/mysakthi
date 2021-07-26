@@ -1,18 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:mysakthi/size.dart';
-import 'package:mysakthi/view/screen/myprofile.dart';
-import 'package:mysakthi/view/screen/selectcountry.dart';
-import 'package:mysakthi/view/screen/wallebalanceedit.dart';
-import 'package:mysakthi/view/widget/country.dart';
+import 'package:mysakthi/model/model.dart';
 
-class SelectCountry extends StatefulWidget {
-  const SelectCountry({Key? key}) : super(key: key);
+import '../../size.dart';
 
-  @override
-  _SelectCountryState createState() => _SelectCountryState();
-}
+class Languagepage extends StatelessWidget {
+  const Languagepage({Key? key}) : super(key: key);
 
-class _SelectCountryState extends State<SelectCountry> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -55,6 +48,7 @@ class _SelectCountryState extends State<SelectCountry> {
                           ),
                           prefixIcon: Image.asset("assets/images/search.png"),
                           labelText: "search",
+                          enabledBorder: InputBorder.none,
                           focusedBorder: InputBorder.none,
                           disabledBorder: InputBorder.none,
                           border: OutlineInputBorder(
@@ -80,7 +74,56 @@ class _SelectCountryState extends State<SelectCountry> {
           )),
           child: Padding(
             padding: const EdgeInsets.only(top: 40.0, left: 20, right: 20),
-            child: SelectCountryContainer(),
+            child: Container(
+                height: SizeConfig.height! * 70,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20)),
+                    color: Colors.white),
+                child: Column(
+                  children: [
+                    Center(
+                        child: Text(
+                      "select language",
+                      style: TextStyle(color: Colors.black),
+                    )),
+                    Expanded(
+                      child: ListView.builder(
+                        itemBuilder: (BuildContext context, int) {
+                          return Column(
+                            children: [
+                              ListTile(
+                                leading: Container(
+                                  height: 45,
+                                  width: 45,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: Colors.grey[100]),
+                                  child: Center(
+                                      child: Text(
+                                    '${language[int].keys.first.toString()}',
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 12),
+                                  )),
+                                ),
+                                title: Text(
+                                    '${language[int].values.first.toString()}'),
+                              ),
+                              Divider(
+                                color: Colors.black54,
+                                thickness: 1,
+                                indent: 50,
+                                endIndent: 50,
+                              )
+                            ],
+                          );
+                        },
+                        itemCount: language.length,
+                      ),
+                    ),
+                  ],
+                )),
           ),
         ),
       ),

@@ -24,7 +24,7 @@ class _OtpLoginState extends State<OtpLogin> {
 
   FirebaseAuth _auth=FirebaseAuth.instance;
 
-   String ?verificationId; 
+  late String verificationId; 
 
   bool showLoading=false;
   void signWithPhoneAuthCredential(AuthCredential phoneAuthCredential)async {
@@ -43,7 +43,7 @@ class _OtpLoginState extends State<OtpLogin> {
    }on FirebaseAuthException catch(e){
      setState(() {
       showLoading=true;
-            _scaffoldKey.currentState!.showSnackBar(SnackBar(content:Text(e.message)));
+            _scaffoldKey.currentState!.showSnackBar(SnackBar(content:Text(e.message!)));
 
     });
    }
@@ -108,7 +108,7 @@ return Column(
              setState(() {
           showLoading=false;
         });
-             _scaffoldKey.currentState!.showSnackBar(SnackBar(content:Text(verificationFailed.message))); 
+             _scaffoldKey.currentState!.showSnackBar(SnackBar(content:Text(verificationFailed.message!))); 
            }, 
            codeSent: (verificationId,resendToken)async{
 
