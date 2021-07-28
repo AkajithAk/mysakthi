@@ -129,11 +129,16 @@ class _LeveltrackingState extends State<Leveltracking> {
                 child: ListView.builder(
                   itemCount: userrefer.length,
                   itemBuilder: (BuildContext context, int i) {
-                    return Tilewidget(
-                        image: "assets/images/profile.png",
-                        title: userrefer[i].keys.first,
-                        subtitle: userrefer[i].values.first.keys.first,
-                        planimg: userrefer[i].values.first.values.first);
+                    return Container(
+                      width: SizeConfig.width! * 90,
+                      height: SizeConfig.height! * 10,
+                      child: ListTile(
+                        leading: Image.asset("assets/images/profile.png"),
+                        title: Text(userrefer[i].keys.first),
+                        subtitle: Text(userrefer[i].values.first.keys.first),
+                        trailing: Image.asset(userrefer[i].values.first.values.first),
+                      ),
+                    );
                   },
                 ),
               )
@@ -168,3 +173,11 @@ class _LeveltrackingState extends State<Leveltracking> {
 //                       ),
 
 //                     )
+
+
+
+// Tilewidget(
+//                         image: "assets/images/profile.png",
+//                         title: userrefer[i].keys.first,
+//                         subtitle: userrefer[i].values.first.keys.first,
+//                         planimg: userrefer[i].values.first.values.first)
