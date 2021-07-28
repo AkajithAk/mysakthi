@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mysakthi/size.dart';
+import 'package:mysakthi/view/widget/tilewidget.dart';
 
 class Leveltracking extends StatefulWidget {
   Leveltracking({Key? key}) : super(key: key);
@@ -18,28 +19,28 @@ class _LeveltrackingState extends State<Leveltracking> {
     {"level": "04"}
   ];
 
-  List<Map<String,Map<String,String>>> userrefer = [
+  List<Map<String, Map<String, String>>> userrefer = [
     {
-    "Rajesh":{"Joined Apr 28, 2021":"assets/images/silver.png"}
-  },
-  {
-    "Rajesh":{"Joined Apr 28, 2021":"assets/images/gold.png"}
-  },
-  {
-    "Rajesh":{"Joined Apr 28, 2021":"assets/images/diamond.png"}
-  },
-  {
-    "Rajesh":{"Joined Apr 28, 2021":"assets/images/diamond.png"}
-  },
-  {
-    "Rajesh":{"Joined Apr 28, 2021":"assets/images/diamond.png"}
-  },
-  {
-    "Rajesh":{"Joined Apr 28, 2021":"assets/images/diamond.png"}
-  },
-  {
-    "Rajesh":{"Joined Apr 28, 2021":"assets/images/diamond.png"}
-  }
+      "Rajesh": {"Joined Apr 28, 2021": "assets/images/silver.png"}
+    },
+    {
+      "Rajesh": {"Joined Apr 28, 2021": "assets/images/gold.png"}
+    },
+    {
+      "Rajesh": {"Joined Apr 28, 2021": "assets/images/diamond.png"}
+    },
+    {
+      "Rajesh": {"Joined Apr 28, 2021": "assets/images/diamond.png"}
+    },
+    {
+      "Rajesh": {"Joined Apr 28, 2021": "assets/images/diamond.png"}
+    },
+    {
+      "Rajesh": {"Joined Apr 28, 2021": "assets/images/diamond.png"}
+    },
+    {
+      "Rajesh": {"Joined Apr 28, 2021": "assets/images/diamond.png"}
+    }
   ];
 
   @override
@@ -54,7 +55,9 @@ class _LeveltrackingState extends State<Leveltracking> {
         decoration: BoxDecoration(
             image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage("assets/images/background3.png",))),
+                image: AssetImage(
+                  "assets/images/background3.png",
+                ))),
         child: Padding(
           padding: const EdgeInsets.all(18.0),
           child: Column(
@@ -65,9 +68,12 @@ class _LeveltrackingState extends State<Leveltracking> {
                 children: [
                   Transform.translate(
                       offset: const Offset(-60, 0),
-                      child: Image.asset("assets/images/Back.png",)),
+                      child: Image.asset(
+                        "assets/images/Back.png",
+                      )),
                   Transform.translate(
-                      offset: const Offset(-40, 0), child: Text("level tracking"))
+                      offset: const Offset(-40, 0),
+                      child: Text("level tracking"))
                 ],
               ),
               SizedBox(
@@ -82,6 +88,7 @@ class _LeveltrackingState extends State<Leveltracking> {
                 child: Container(
                   //height: 100,
                   //color: Colors.amber,
+                  padding: EdgeInsets.all(8),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -118,29 +125,16 @@ class _LeveltrackingState extends State<Leveltracking> {
               SizedBox(
                 height: SizeConfig.height! * 8,
               ),
-              Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
-                    color: Colors.white
-                    ),
-                width: SizeConfig.width! * 100,
-                height: SizeConfig.height! * 60,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 30),
-                  child: ListView.builder(
-                    itemCount: userrefer.length,
-                    itemBuilder: (BuildContext context, int i) {
-                    return ListTile(
-                      //horizontalTitleGap: ,
-                      minVerticalPadding: 10,enabled: true,
-                      leading: Image.asset("assets/images/profile.png"),
-                      title: Text(userrefer[i].keys.first),
-                      subtitle: Text(userrefer[i].values.first.keys.first),
-                      trailing: Image.asset(userrefer[i].values.first.values.first),
-                    );
-
-                   },
-                  ),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: userrefer.length,
+                  itemBuilder: (BuildContext context, int i) {
+                    return Tilewidget(
+                        image: "assets/images/profile.png",
+                        title: userrefer[i].keys.first,
+                        subtitle: userrefer[i].values.first.keys.first,
+                        planimg: userrefer[i].values.first.values.first);
+                  },
                 ),
               )
             ],
@@ -150,3 +144,27 @@ class _LeveltrackingState extends State<Leveltracking> {
     ));
   }
 }
+
+
+
+
+
+// ListTile(
+//                       //horizontalTitleGap: ,
+//                       minVerticalPadding: 10,enabled: true,
+//                       leading: Image.asset("assets/images/profile.png"),
+//                       title: Text(userrefer[i].keys.first),
+//                       subtitle: Text(userrefer[i].values.first.keys.first),
+//                       trailing: Column(
+//                         children: [
+//                           Image.asset(userrefer[i].values.first.values.first),
+//                           Container(
+//                             width: 1,
+//                             child: 
+//                             Center(child: 
+//                             Text("Buy now",style: TextStyle(fontSize: 5),),),
+//                           )
+//                         ],
+//                       ),
+
+//                     )

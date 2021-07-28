@@ -3,9 +3,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mysakthi/view/screen/Referalscreen.dart';
 import 'package:mysakthi/view/screen/languages.dart';
-import 'package:mysakthi/view/screen/level.dart'; 
+import 'package:mysakthi/view/screen/level.dart';
+import 'package:mysakthi/view/screen/paymentpage.dart'; 
 import 'package:mysakthi/view/screen/plans.dart';
 import 'package:mysakthi/view/screen/selectcountry.dart';
+import 'package:mysakthi/view/screen/selectpaymentmethod.dart';
+import 'package:mysakthi/view/widget/tilewidget.dart';
 
 import 'view/screen/onboardingpage1.dart';
 import 'view/screen/splashscreen.dart';
@@ -55,7 +58,7 @@ class MyApp extends StatelessWidget {
 
           // primarySwatch: Colors.blue,
           ),
-      home:ReferalPage(),
+      home:Paymentmethod()
       // PageView(
       //   controller: controller,
       //   children: [
